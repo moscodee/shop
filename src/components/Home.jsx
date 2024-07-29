@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { BASE_URL } from "../api/fakeStore";
 import { setProducts } from "../redux/actions";
 import { FetchApi } from "./FetchApi";
+import ProductsList from "./ProductList";
+import "../styles/Home.css";
 
 const Home = ({ products, setProducts }) => {
   useEffect(() => {
@@ -13,7 +15,13 @@ const Home = ({ products, setProducts }) => {
     }
     fetchData();
   }, []);
-  return <div>home</div>;
+  return (
+    <div className="products_container">
+      {products.map((item) => (
+        <ProductsList key={item.id} data={item} />
+      ))}
+    </div>
+  );
 };
 const mapStateToProps = (state) => {
   return state.products;
