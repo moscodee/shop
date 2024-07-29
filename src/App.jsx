@@ -1,12 +1,16 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
+import Header from "./components/Header";
+import "./styles/App.css";
+
 const App = () => {
   return (
-    <BrowserRouter>
+    <Router>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 };
 
