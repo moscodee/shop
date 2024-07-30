@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import { BASE_URL } from "../api/fakeStore";
 import { setProducts } from "../redux/actions";
-import { FetchApi } from "./FetchApi";
+import FetchApi from "./FetchApi";
 import ProductsList from "./ProductList";
 import "../styles/Home.css";
 

@@ -1,7 +1,8 @@
 import axios from "axios";
 
-export const FetchApi = async (url, path) => {
+const FetchApi = async (url, path) => {
   return axios.get(`${url}${path}`).then((res) => {
     return res;
   });
 };
+export default FetchApi;
