@@ -47,17 +47,3 @@
   font-size: 22px;
   text-align: left;
 }
-.price {
-  color: #333333;
-  margin: 25px 0 5px;
-  font-size: 19px;
-  font-weight: 700;
-}
-
-.buy {
-  border: 1px solid #405d72;
-  background-color: #758694;
-  color: #eee;
-  padding: 10px 25px;
-  font-size: 20px;
-}

@@ -31,8 +31,6 @@ const ProductDetail = ({ product, selectedProduct, removeSelectedProduct }) => {
           <div className={CSS.r_col}>
             <div className={CSS.title}>{title}</div>
             <div className={CSS.description}>{description}</div>
-            <div className={CSS.price}>$ {price}</div>
-            <button className={CSS.buy}>buy</button>
             {/* <div>{rating.rate}</div> */}
           </div>
         </div>
