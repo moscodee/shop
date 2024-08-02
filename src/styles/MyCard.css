@@ -1,0 +1,58 @@
+.product_row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+table,
+th,
+td {
+  border: 1px solid #eee;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #e3e3e3;
+  padding: 8px 0;
+  width: 20%;
+}
+
+td {
+  padding: 5px 10px;
+  text-align: center;
+}
+
+button {
+  cursor: pointer;
+}
+
+.quantity_btn {
+  padding: 6px 20px;
+  background-color: #758694;
+  color: #fff;
+  transition: 0.25s;
+  border: none;
+  border-radius: 10px 5px;
+}
+
+.quantity_btn:hover {
+  background-color: #e3e3e3;
+  color: #000;
+}
+
+.remove_btn {
+  padding: 6px 20px;
+  background-color: #d24545;
+  color: #fff;
+  transition: 0.25s;
+  border: none;
+  border-radius: 10px 5px;
+}
+.remove_btn:hover {
+  background-color: #e3e3e3;
+  color: #000;
+}

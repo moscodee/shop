@@ -1,15 +1,27 @@
 .header_container {
   display: flex;
-  height: 50px;
-  line-height: 50px;
   background-color: #405d72;
   padding: 10px 15px;
+  height: 50px;
+  line-height: 50px;
+}
+
+.l_col {
+  display: flex;
+  gap: 25px;
 }
 
 .logo {
   font-size: 30px;
   color: #fff8f3;
   user-select: none;
+}
+
+.home {
+  font-size: 25px;
+  color: #e7e5e3;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .card {
