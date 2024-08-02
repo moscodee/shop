@@ -2,6 +2,7 @@ import {
   SELECTED_PRODUCT,
   SET_PRODUCTS,
   REMOVE_SELECTED_PRODUCT,
+  REMOVE_FROM_CARD,
   ADD_TO_CARD,
 } from "../constans";
 
@@ -33,6 +34,8 @@ export const cardReducer = (state = cardState, { type, payload }) => {
     case ADD_TO_CARD:
       const isExist = state.find((item) => item.id === payload.id);
       if (!isExist) return [...state, payload];
+    case REMOVE_FROM_CARD:
+      return state.filter((item) => item.id !== payload.id);
     default:
       return state;
   }
