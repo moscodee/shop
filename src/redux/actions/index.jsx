@@ -2,6 +2,8 @@ import {
   SELECTED_PRODUCT,
   SET_PRODUCTS,
   REMOVE_SELECTED_PRODUCT,
+  INCREASE_PRODUCT,
+  DECREASE_PRODUCT,
   ADD_TO_CARD,
   REMOVE_FROM_CARD,
 } from "../constans";
@@ -22,6 +24,18 @@ export const selectedProduct = (product) => {
 export const removeSelectedProduct = (product) => {
   return {
     type: REMOVE_SELECTED_PRODUCT,
+    payload: product,
+  };
+};
+export const increaseProduct = (product) => {
+  return {
+    type: INCREASE_PRODUCT,
+    payload: product,
+  };
+};
+export const decreaseProduct = (product) => {
+  return {
+    type: DECREASE_PRODUCT,
     payload: product,
   };
 };

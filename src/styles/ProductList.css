@@ -35,28 +35,36 @@
   position: relative;
 }
 
-.card_container {
+.buy {
   display: flex;
-  justify-content: center;
-  gap: 5px;
   margin: 10px auto;
-}
-
-.card_container button {
-  padding: 5px 10px;
+  padding: 8px 20px;
   border: none;
+  border-radius: 3px;
   background-color: #758694;
   color: #fff;
-  border-radius: 50%;
   cursor: pointer;
   transition: 0.25s;
 }
-
-.card_container button:hover {
+.buy:hover {
   background-color: #fff;
   color: #000;
 }
-
+.remove {
+  display: flex;
+  margin: 10px auto;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 3px;
+  background-color: #d24545;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.25s;
+}
+.remove:hover {
+  background-color: #fff;
+  color: #000;
+}
 .category {
   position: absolute;
   bottom: 10px;

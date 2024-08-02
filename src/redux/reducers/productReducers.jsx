@@ -31,16 +31,8 @@ export const selectedProductReducer = (state = {}, { type, payload }) => {
 export const cardReducer = (state = cardState, { type, payload }) => {
   switch (type) {
     case ADD_TO_CARD:
-      const productIndex = state.find((item) => item.id === payload.id);
-      if (productIndex) {
-        productIndex.count += 1;
-        const products = state.filter((item) => item.id !== payload.id);
-        return [...products, productIndex];
-      }
-      payload.count = 1;
-      return [...state, payload];
-    case REMOVE_SELECTED_PRODUCT:
-      return state;
+      const isExist = state.find((item) => item.id === payload.id);
+      if (!isExist) return [...state, payload];
     default:
       return state;
   }

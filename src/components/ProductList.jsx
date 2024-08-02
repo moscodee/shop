@@ -5,7 +5,9 @@ import { addToCard } from "../redux/actions";
 
 const ProductList = (data) => {
   const { card, addToCard } = data;
+  console.log(card);
   const { id, image, title, price, category } = data.data;
+  const isInBag = card.some((item) => item.id === id);
   return (
     <div className="product_card">
       <Link to={`/product/${id}`}>
@@ -13,13 +15,12 @@ const ProductList = (data) => {
       </Link>
       <div className="title">{title}</div>
       <div className="price">$ {price}</div>
-      <div className="card_container">
-        <button onClick={() => addToCard(data.data)}>+</button>
-        {card.map((item) => {
-          return <p>{item.count}</p>;
-        })}
-        <button>-</button>
-      </div>
+      <button
+        onClick={() => addToCard(data.data)}
+        className={!isInBag ? "buy" : "remove"}
+      >
+        {!isInBag ? "ADD" : "REMOVE"}
+      </button>
       <div className="category">{category}</div>
     </div>
   );

@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { connect } from "react-redux";
 
 import { BASE_URL } from "../api/fakeStore";
-import { addToCard, setProducts } from "../redux/actions";
+import { setProducts } from "../redux/actions";
 import FetchApi from "./FetchApi";
 import ProductList from "./ProductList";
 import "../styles/Home.css";
@@ -18,12 +18,7 @@ const Home = ({ products, setProducts }) => {
   return (
     <div className="products_container">
       {products.products.map((item) => (
-        <ProductList
-          key={item.id}
-          data={item}
-          // count={count}
-          addToCard={addToCard}
-        />
+        <ProductList key={item.id} data={item} />
       ))}
     </div>
   );
@@ -34,7 +29,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     setProducts: (props) => dispatch(setProducts(props)),
-    addToCard: (props) => dispatch(addToCard(props)),
   };
 };
 
