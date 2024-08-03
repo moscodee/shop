@@ -1,9 +1,8 @@
 import { connect } from "react-redux";
-import { decreaseProduct, increaseProduct } from "../redux/actions";
+import { addToCard } from "../redux/actions";
 import "../styles/MyCard.css";
 
-export const MyCard = ({ card, increaseProduct, decreaseProduct }) => {
-  console.log(card);
+export const MyCard = ({ card, addToCard }) => {
   return (
     <div className="product_row">
       <table>
@@ -29,7 +28,7 @@ export const MyCard = ({ card, increaseProduct, decreaseProduct }) => {
                 <td>
                   <button
                     className="quantity_btn"
-                    onClick={() => increaseProduct(item)}
+                    onClick={() => addToCard(item)}
                   >
                     +
                   </button>
@@ -39,12 +38,7 @@ export const MyCard = ({ card, increaseProduct, decreaseProduct }) => {
                   <button className="quantity_btn">-</button>
                 </td>
                 <td>
-                  <button
-                    className="remove_btn"
-                    onClick={() => decreaseProduct(item)}
-                  >
-                    Remove
-                  </button>
+                  <button className="remove_btn">Remove</button>
                 </td>
               </tr>
             </tbody>
@@ -63,8 +57,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    increaseProduct: (props) => dispatch(increaseProduct(props)),
-    decreaseProduct: (props) => dispatch(decreaseProduct(props)),
+    addToCard: (props) => dispatch(addToCard(props)),
   };
 };
 
