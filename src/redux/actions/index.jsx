@@ -3,6 +3,7 @@ import {
   SET_PRODUCTS,
   REMOVE_SELECTED_PRODUCT,
   ADD_TO_CARD,
+  REMOVE_FROM_CARD,
 } from "../constans";
 
 export const setProducts = (products) => {
@@ -27,6 +28,12 @@ export const removeSelectedProduct = (product) => {
 export const addToCard = (product) => {
   return {
     type: ADD_TO_CARD,
+    payload: product,
+  };
+};
+export const removeFromCard = (product) => {
+  return {
+    type: REMOVE_FROM_CARD,
     payload: product,
   };
 };
