@@ -2,10 +2,7 @@ import {
   SELECTED_PRODUCT,
   SET_PRODUCTS,
   REMOVE_SELECTED_PRODUCT,
-<<<<<<< HEAD
   DECREASE_PRODUCT,
-=======
->>>>>>> db11362f246b11b06d6bffc98fff8c40c0e32057
   ADD_TO_CARD,
   REMOVE_FROM_CARD,
 } from "../constans";
@@ -29,15 +26,12 @@ export const removeSelectedProduct = (product) => {
     payload: product,
   };
 };
-<<<<<<< HEAD
 export const decreaseProduct = (product) => {
   return {
     type: DECREASE_PRODUCT,
     payload: product,
   };
 };
-=======
->>>>>>> db11362f246b11b06d6bffc98fff8c40c0e32057
 export const addToCard = (product) => {
   return {
     type: ADD_TO_CARD,

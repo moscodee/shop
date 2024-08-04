@@ -1,20 +1,13 @@
 import { connect } from "react-redux";
-<<<<<<< HEAD
 import { decreaseProduct, addToCard, removeFromCard } from "../redux/actions";
 import "../styles/MyCard.css";
 
 export const MyCard = ({
   card,
-  addToCard,
   decreaseProduct,
+  addToCard,
   removeFromCard,
 }) => {
-=======
-import { removeFromCard, addToCard } from "../redux/actions";
-import "../styles/MyCard.css";
-
-export const MyCard = ({ card, addToCard, removeFromCard }) => {
->>>>>>> db11362f246b11b06d6bffc98fff8c40c0e32057
   return (
     <div className="product_row">
       <table>
@@ -49,11 +42,7 @@ export const MyCard = ({ card, addToCard, removeFromCard }) => {
                 <td>
                   <button
                     className="quantity_btn"
-<<<<<<< HEAD
                     onClick={() => decreaseProduct(item)}
-=======
-                    onClick={() => removeFromCard(item)}
->>>>>>> db11362f246b11b06d6bffc98fff8c40c0e32057
                   >
                     -
                   </button>
@@ -84,10 +73,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     addToCard: (props) => dispatch(addToCard(props)),
-<<<<<<< HEAD
     decreaseProduct: (props) => dispatch(decreaseProduct(props)),
-=======
->>>>>>> db11362f246b11b06d6bffc98fff8c40c0e32057
     removeFromCard: (props) => dispatch(removeFromCard(props)),
   };
 };
