@@ -5,7 +5,6 @@ import { addToCard } from "../redux/actions";
 
 const ProductList = (data) => {
   const { card, addToCard } = data;
-  console.log(card);
   const { id, image, title, price, category } = data.data;
   const isInBag = card.some((item) => item.id === id);
   return (

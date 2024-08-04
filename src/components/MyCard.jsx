@@ -1,9 +1,13 @@
 import { connect } from "react-redux";
-import { decreaseProduct, increaseProduct } from "../redux/actions";
+import { decreaseProduct, addToCard, removeFromCard } from "../redux/actions";
 import "../styles/MyCard.css";
 
-export const MyCard = ({ card, increaseProduct, decreaseProduct }) => {
-  console.log(card);
+export const MyCard = ({
+  card,
+  addToCard,
+  decreaseProduct,
+  removeFromCard,
+}) => {
   return (
     <div className="product_row">
       <table>
@@ -17,10 +21,10 @@ export const MyCard = ({ card, increaseProduct, decreaseProduct }) => {
             <th className="remove_th">Remove</th>
           </tr>
         </thead>
-        {card.map((item) => {
-          const { image, title, id, count } = item;
+        {card.map((item, index) => {
+          const { image, title, count } = item;
           return (
-            <tbody key={id}>
+            <tbody key={index}>
               <tr>
                 <td>
                   <img src={image} alt={title} width={100} />
@@ -29,19 +33,24 @@ export const MyCard = ({ card, increaseProduct, decreaseProduct }) => {
                 <td>
                   <button
                     className="quantity_btn"
-                    onClick={() => increaseProduct(item)}
+                    onClick={() => addToCard(item)}
                   >
                     +
                   </button>
                 </td>
                 <td>{count}</td>
                 <td>
-                  <button className="quantity_btn">-</button>
+                  <button
+                    className="quantity_btn"
+                    onClick={() => decreaseProduct(item)}
+                  >
+                    -
+                  </button>
                 </td>
                 <td>
                   <button
                     className="remove_btn"
-                    onClick={() => decreaseProduct(item)}
+                    onClick={() => removeFromCard(item)}
                   >
                     Remove
                   </button>
@@ -63,8 +72,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    increaseProduct: (props) => dispatch(increaseProduct(props)),
+    addToCard: (props) => dispatch(addToCard(props)),
     decreaseProduct: (props) => dispatch(decreaseProduct(props)),
+    removeFromCard: (props) => dispatch(removeFromCard(props)),
   };
 };
 
